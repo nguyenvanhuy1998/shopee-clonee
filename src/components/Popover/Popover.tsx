@@ -1,4 +1,4 @@
-import { FloatingPortal, arrow, offset, shift, useFloating } from '@floating-ui/react'
+import { FloatingPortal, Placement, arrow, offset, shift, useFloating } from '@floating-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { ElementType, useId, useRef, useState } from 'react'
 
@@ -8,12 +8,21 @@ interface Props {
   className?: string
   initialOpen?: boolean
   as?: ElementType
+  placement?: Placement
 }
-export default function Popover({ children, renderPopover, className, initialOpen, as: Element = 'div' }: Props) {
+export default function Popover({
+  children,
+  renderPopover,
+  className,
+  initialOpen,
+  as: Element = 'div',
+  placement = 'bottom-end'
+}: Props) {
   const [open, setOpen] = useState(initialOpen || false)
   const arrowRef = useRef<HTMLElement>(null)
   const { refs, strategy, x, y, middlewareData } = useFloating({
-    middleware: [offset(6), shift(), arrow({ element: arrowRef })]
+    middleware: [offset(6), shift(), arrow({ element: arrowRef })],
+    placement: placement
   })
   const id = useId()
   const showPopover = () => {
