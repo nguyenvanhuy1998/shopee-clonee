@@ -8,14 +8,25 @@ interface InputProps {
   name: string
   rules?: RegisterOptions
   errorMessage?: string
+  autoComplete?: string
 }
 
-export default function Input({ className, type, placeholder, register, name, rules, errorMessage }: InputProps) {
+export default function Input({
+  className,
+  type,
+  placeholder,
+  register,
+  name,
+  rules,
+  errorMessage,
+  autoComplete
+}: InputProps) {
   return (
     <div className={className}>
       <input
         type={type}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         {...register(name, rules)}
         className='p-3 w-full outline-none border border-gray-300 focus:border-gray-500 rounded-sm focus:shadow-sm'
       />
