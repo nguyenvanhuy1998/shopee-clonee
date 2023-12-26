@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import { login } from 'src/api/auth.api'
+import authApi from 'src/api/auth.api'
 import Button from 'src/components/Button'
 import Input from 'src/components/Input'
 import { AppContext } from 'src/contexts/app.context'
@@ -24,7 +24,7 @@ export default function Login() {
     resolver: yupResolver(loginSchema)
   })
   const loginMutation = useMutation({
-    mutationFn: (body: FormData) => login(body)
+    mutationFn: (body: FormData) => authApi.login(body)
   })
   const onSubmit = handleSubmit((data) => {
     loginMutation.mutate(data, {
