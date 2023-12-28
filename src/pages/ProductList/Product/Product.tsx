@@ -21,27 +21,27 @@ export default function Product({ product }: Props) {
         {/* Tên sản phẩm */}
         <div className='p-2 overflow-hidden'>
           <div className='min-h-[2rem] line-clamp-2 text-xs'>{product.name}</div>
-        </div>
-        {/* Giá */}
-        <div className='flex items-center mt-3'>
-          <div className='line-through max-w-[50%] text-gray-500 truncate'>
-            <span className='text-xs'>₫</span>
-            <span>{formatCurrency(product.price_before_discount)}</span>
+          {/* Giá */}
+          <div className='flex items-center mt-3'>
+            <div className='line-through max-w-[50%] text-gray-500 truncate'>
+              <span className='text-xs'>₫</span>
+              <span>{formatCurrency(product.price_before_discount)}</span>
+            </div>
+            <div className='text-orange truncate ml-1'>
+              <span className='text-xs'>₫</span>
+              <span>{formatCurrency(product.price)}</span>
+            </div>
           </div>
-          <div className='text-orange truncate ml-1'>
-            <span className='text-xs'>₫</span>
-            <span>{formatCurrency(product.price)}</span>
-          </div>
-        </div>
-        {/* Số lượng đã bán */}
-        <div className='mt-3 flex items-center justify-end'>
-          {/* Ngôi sao */}
-          <ProductRating rating={product.rating} />
+          {/* Số lượng đã bán */}
+          <div className='mt-3 flex items-center justify-end'>
+            {/* Ngôi sao */}
+            <ProductRating rating={product.rating} />
 
-          {/* Đã bán */}
-          <div className='ml-2 text-sm'>
-            <span>{formatNumberToSocialStyle(product.sold)}</span>
-            <span className='ml-1'>Đã bán</span>
+            {/* Đã bán */}
+            <div className='ml-2 text-sm'>
+              <span>{formatNumberToSocialStyle(product.sold)}</span>
+              <span className='ml-1'>Đã bán</span>
+            </div>
           </div>
         </div>
       </div>
