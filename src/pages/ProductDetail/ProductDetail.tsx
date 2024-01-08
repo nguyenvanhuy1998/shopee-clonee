@@ -179,7 +179,7 @@ export default function ProductDetail() {
                   <InputNumber
                     value={1}
                     classNameError='hidden'
-                    classNameInput='h-8 w-14 border-t border-b border-gray-300 p-1 text-center outline-none'
+                    classNameInput='h-8  w-14 border-t border-b border-gray-300 p-1 text-center outline-none'
                   />
                   <button className='flex w-8 h-8 border-gray-300 items-center justify-center rounded-r-sm border border-gray-300 text-gray-600'>
                     <svg
