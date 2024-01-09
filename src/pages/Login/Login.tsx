@@ -34,7 +34,6 @@ export default function Login() {
         navigate('/')
       },
       onError: (error) => {
-        console.log(error)
         if (isAxiosUnprocessableEntityError<ErrorResponse<FormData>>(error)) {
           const formError = error.response?.data.data
           if (formError) {

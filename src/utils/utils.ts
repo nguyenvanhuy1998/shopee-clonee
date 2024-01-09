@@ -32,6 +32,5 @@ export const generateNameId = ({ name, id }: { name: string; id: string }) => {
 }
 export const getIdFromNameId = (nameId: string) => {
   const arr = nameId.split('-i-')
-  console.log('arr', arr)
   return arr[arr.length - 1]
 }

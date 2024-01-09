@@ -2,7 +2,6 @@ import { Link, useMatch } from 'react-router-dom'
 
 export default function RegisterHeader() {
   const registerMath = useMatch('/register')
-  console.log(registerMath)
   const isRegister = Boolean(registerMath)
   return (
     <header className='py-5'>
